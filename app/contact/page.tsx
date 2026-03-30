@@ -29,6 +29,9 @@ export default function ContactPage() {
             <p>{site.fullAddress}</p>
             <p>{site.sundayService}</p>
             <p>{site.wednesdayMeeting}</p>
+            <div className="button-row">
+              <a href="/visit" className="button secondary">Plan Your Visit</a>
+            </div>
           </div>
 
           <div className="card">
@@ -36,7 +39,8 @@ export default function ContactPage() {
             <p>Email: {site.email}</p>
             <p>Phone: {site.phone || "Add church phone number"}</p>
             <p className="muted">
-              Send a message below and someone from the church can respond.
+              You can also connect through social media for church updates and
+              community life.
             </p>
             <SocialLinks />
           </div>
@@ -44,7 +48,12 @@ export default function ContactPage() {
       </Section>
 
       <Section title="Send a message">
-        <ContactForm />
+        <div className="grid-2">
+          <ContactForm />
+          <div className="image-frame split-photo">
+            <img src="/images/pastor-wife.jpg" alt="Church leaders smiling together" />
+          </div>
+        </div>
       </Section>
     </>
   );

@@ -25,9 +25,7 @@ export default function VisitPage() {
           <div className="card">
             <h3>Sunday Service</h3>
             <p>{site.sundayService}</p>
-            <p>
-              A time of worship, prayer, preaching, and fellowship together.
-            </p>
+            <p>A time of worship, prayer, preaching, and fellowship together.</p>
           </div>
           <div className="card">
             <h3>Midweek Meeting</h3>
@@ -43,8 +41,8 @@ export default function VisitPage() {
             <h3>Address</h3>
             <p>{site.fullAddress}</p>
             <p className="muted">
-              Add parking notes here if needed, for example where visitors can park
-              and which entrance to use.
+              Add parking notes here if needed, including the best entrance and where
+              visitors can park comfortably.
             </p>
           </div>
 
@@ -60,42 +58,39 @@ export default function VisitPage() {
         </div>
       </Section>
 
-      <Section title="What to expect">
-        <div className="grid-3">
-          <div className="card">
-            <h3>Friendly people</h3>
-            <p>
-              We are a smaller church, so people will usually greet you and help you
-              feel settled.
-            </p>
+      <Section title="What church life looks like here">
+        <div className="grid-2">
+          <div className="image-frame split-photo">
+            <img src="/images/baptism.jpg" alt="Baptism in the water" />
           </div>
-
           <div className="card">
-            <h3>Simple worship service</h3>
+            <h3>Faith in action</h3>
             <p>
-              Our service includes singing, prayer, Bible preaching, and time to
-              respond to God.
+              We are a Pentecostal church that values worship, prayer, biblical
+              preaching, discipleship, and obedience to God.
             </p>
-          </div>
-
-          <div className="card">
-            <h3>Come as you are</h3>
             <p>
-              You do not need to know everything before you come. You are welcome
-              to attend and quietly observe if that is more comfortable.
+              You may see times of prayer, ministry, testimony, and genuine care for
+              one another. We want church to be both spiritually alive and genuinely
+              welcoming.
             </p>
           </div>
         </div>
       </Section>
 
       <Section title="Questions people often have">
-        <div className="card">
-          <ul className="list">
-            <li>What should I wear? Modest, neat, everyday clothing is fine.</li>
-            <li>How long is the service? Around 60 to 90 minutes.</li>
-            <li>Can I come on my own? Yes, absolutely.</li>
-            <li>Do I need to contact someone first? No, but you are welcome to.</li>
-          </ul>
+        <div className="grid-2">
+          <div className="card">
+            <ul className="list">
+              <li>What should I wear? Modest, neat, everyday clothing is fine.</li>
+              <li>How long is the service? Around 60 to 90 minutes.</li>
+              <li>Can I come on my own? Yes, absolutely.</li>
+              <li>Do I need to contact someone first? No, but you are welcome to.</li>
+            </ul>
+          </div>
+          <div className="image-frame split-photo">
+            <img src="/images/prayer.jpg" alt="People praying together in church" />
+          </div>
         </div>
       </Section>
     </>

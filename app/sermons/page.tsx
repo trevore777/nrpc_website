@@ -30,7 +30,6 @@ export default function SermonsPage() {
           {sermons.map((sermon) => (
             <div className="card" key={`${sermon.title}-${sermon.date}`}>
               <h3>{sermon.title}</h3>
-
               <p className="muted">
                 {sermon.speaker} • {sermon.date}
               </p>
@@ -54,11 +53,7 @@ export default function SermonsPage() {
                 <img
                   src={sermon.thumbnail}
                   alt={sermon.title}
-                  style={{
-                    width: "100%",
-                    borderRadius: 12,
-                    marginBottom: 14
-                  }}
+                  style={{ width: "100%", borderRadius: 12, marginBottom: 14 }}
                 />
               ) : null}
 
@@ -89,6 +84,20 @@ export default function SermonsPage() {
               ) : null}
             </div>
           ))}
+        </div>
+      </Section>
+
+      <Section title="Church life and teaching">
+        <div className="grid-2">
+          <div className="image-frame split-photo">
+            <img src="/images/prayer.jpg" alt="People praying together during church gathering" />
+          </div>
+          <div className="card">
+            <p>
+              This page can also hold AI-generated sermon summaries, main Scriptures,
+              application points, and links to YouTube messages for easy access.
+            </p>
+          </div>
         </div>
       </Section>
     </>

@@ -4,9 +4,12 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="container site-header-inner">
-        <Link href="/" className="brand">
-          Northern Rivers Pentecostal Church
-          <small>A small church with a warm welcome</small>
+        
+        <Link href="/" className="brand brand-logo">
+          <img
+            src="/logo.png"
+            alt="Northern Rivers Pentecostal Church logo"
+          />
         </Link>
 
         <nav className="nav">
@@ -16,6 +19,7 @@ export default function Header() {
           <Link href="/sermons">Sermons</Link>
           <Link href="/contact">Contact</Link>
         </nav>
+
       </div>
     </header>
   );
