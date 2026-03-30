@@ -5,29 +5,39 @@ import { site } from "../lib/site";
 export default function HomePage() {
   return (
     <>
-      <section className="hero">
-        <div className="container hero-grid">
-          <div>
-            <span className="eyebrow">Welcome to {site.shortName}</span>
-            <h1>A small church where people can pray, belong, and grow.</h1>
-            <p className="lead">
-              {site.churchName} is a welcoming Pentecostal church for individuals,
-              couples, families, and anyone looking for a simple place to worship
-              God and connect with genuine people.
-            </p>
+      <section className="hero hero-banner">
+        <div className="hero-banner-image">
+          <img
+            src="/images/livealife.jpg"
+            alt="Live a life that pleases God"
+          />
+        </div>
+        <div className="hero-banner-overlay" />
 
-            <div className="button-row">
-              <Link href="/visit" className="button primary">
-                Plan Your Visit
-              </Link>
-              <Link href="/contact" className="button secondary">
-                Contact Us
-              </Link>
-            </div>
+        <div className="container hero-banner-content">
+          <span className="eyebrow">Welcome to {site.shortName}</span>
+          <h1>A small church where people can pray, belong, and grow.</h1>
+          <p className="lead lead-light">
+            {site.churchName} is a welcoming Pentecostal church where people can
+            encounter God, build genuine friendships, and be part of a caring faith
+            community in the Northern Rivers.
+          </p>
+
+          <div className="button-row">
+            <Link href="/visit" className="button primary">
+              Plan Your Visit
+            </Link>
+            <Link href="/contact" className="button secondary button-light">
+              Contact Us
+            </Link>
           </div>
+        </div>
+      </section>
 
-          <div className="hero-card">
-            <h3>Service Times</h3>
+      <Section title="Service times and location">
+        <div className="grid-2">
+          <div className="card">
+            <h3>When we meet</h3>
             <p>
               <span className="highlight">Sunday Worship:</span> {site.sundayService}
             </p>
@@ -42,63 +52,131 @@ export default function HomePage() {
               and seek God? You are very welcome.
             </p>
           </div>
-        </div>
-      </section>
 
-      <Section title="What you will find here">
+          <div className="image-frame split-photo">
+            <img
+              src="/images/pastor-wife.jpg"
+              alt="Church leaders smiling together"
+            />
+          </div>
+        </div>
+      </Section>
+
+      <Section title="A church with warmth, community, and faith">
         <div className="grid-3">
           <div className="card">
-            <h3>Warm Fellowship</h3>
+            <h3>Warm fellowship</h3>
+            <div className="inline-photo">
+              <img
+                src="/images/bbq2.jpg"
+                alt="Church barbecue and fellowship outdoors"
+              />
+            </div>
             <p>
-              We value genuine friendships, care for one another, and a church
-              atmosphere where people are noticed and welcomed.
+              We are a smaller church where people are noticed, welcomed, and invited
+              into real Christian fellowship.
             </p>
           </div>
 
           <div className="card">
-            <h3>Biblical Teaching</h3>
+            <h3>Prayer and worship</h3>
+            <div className="inline-photo">
+              <img
+                src="/images/worship1.jpg"
+                alt="Church members worshipping together"
+              />
+            </div>
             <p>
-              We believe the Bible is the Word of God and we aim to preach and teach
-              it clearly, simply, and faithfully.
+              Our gatherings make room for prayer, worship, Bible teaching, and
+              personal response to God.
             </p>
           </div>
 
           <div className="card">
-            <h3>Prayer and Worship</h3>
+            <h3>Everyday faith</h3>
+            <div className="inline-photo">
+              <img
+                src="/images/baptism.jpg"
+                alt="Outdoor baptism in the water"
+              />
+            </div>
             <p>
-              Our gatherings include prayer, worship, preaching, and room for people
-              to seek God personally.
+              We want church life to carry into the week through family, friendship,
+              discipleship, and service.
             </p>
           </div>
         </div>
       </Section>
 
+      <Section title="Life together at NRPC">
+        <div className="gallery-grid">
+          <div className="gallery-card">
+            <div className="gallery-photo">
+              <img src="/images/pastor-wife.jpg" alt="A couple smiling at church" />
+            </div>
+            <div className="gallery-caption">
+              <strong>Friendly leadership</strong>
+              <p className="muted">A church that values warmth, welcome, and people.</p>
+            </div>
+          </div>
+
+          <div className="gallery-card">
+            <div className="gallery-photo">
+              <img src="/images/bbq2.jpg" alt="Church members at a barbecue by the water" />
+            </div>
+            <div className="gallery-caption">
+              <strong>Community and meals</strong>
+              <p className="muted">Sharing life together beyond the Sunday service.</p>
+            </div>
+          </div>
+
+          <div className="gallery-card">
+            <div className="gallery-photo">
+              <img src="/images/baptism.jpg" alt="Outdoor baptism in calm water" />
+            </div>
+            <div className="gallery-caption">
+              <strong>New life in Christ</strong>
+              <p className="muted">Celebrating faith, obedience, and spiritual growth.</p>
+            </div>
+          </div>
+
+          <div className="gallery-card">
+            <div className="gallery-photo">
+              <img src="/images/prayer.jpg" alt="Church members gathered in prayer" />
+            </div>
+            <div className="gallery-caption">
+              <strong>Prayer and care</strong>
+              <p className="muted">Standing together in prayer and spiritual support.</p>
+            </div>
+          </div>
+        </div>
+      </Section>
+
       <Section title="New to church or visiting for the first time?">
-        <div className="grid-2">
+        <div className="feature-grid">
           <div className="card">
-            <h3>You do not need to have it all together</h3>
+            <h3>You can come as you are</h3>
             <p>
-              Some people arrive with a long church background. Others have none at
-              all. Some are searching quietly. Some are returning to faith. Wherever
-              you are at, you are welcome to come and see.
+              Some people come with a strong church background. Others are exploring
+              faith quietly for the first time. Wherever you are at, you are welcome
+              to visit and see what church life is like here.
             </p>
             <p>
               There is no pressure to perform. We want people to feel at ease, hear
               the Word of God, and experience a loving Christian community.
-            </p>
-          </div>
-
-          <div className="card">
-            <h3>Plan your visit</h3>
-            <p>
-              Our visit page explains what the service is like, what to expect, where
-              we meet, and how to contact us before you come.
             </p>
             <div className="button-row">
               <Link href="/visit" className="button primary">
                 Go to Plan Your Visit
               </Link>
             </div>
+          </div>
+
+          <div className="image-frame split-photo">
+            <img
+              src="/images/bbq.jpg"
+              alt="Church barbecue and outdoor fellowship near the water"
+            />
           </div>
         </div>
       </Section>
