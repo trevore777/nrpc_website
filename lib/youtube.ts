@@ -54,7 +54,7 @@ export async function fetchLatestSermonsFromYouTube(maxResults = 12) {
 
   const data = (await res.json()) as YouTubeSearchResponse;
 
-  const videos: YouTubeVideo[] = (data.items ?? [])
+  return (data.items ?? [])
     .filter((item) => item.id?.videoId && item.snippet?.title)
     .map((item) => {
       const videoId = item.id!.videoId!;
@@ -73,6 +73,4 @@ export async function fetchLatestSermonsFromYouTube(maxResults = 12) {
         url: `https://www.youtube.com/watch?v=${videoId}`
       };
     });
-
-  return videos;
 }

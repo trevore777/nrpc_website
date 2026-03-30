@@ -506,3 +506,7 @@ button:disabled {
     transform: scale(1.9);
   }
 }
+.highlight {
+  font-weight: 700;
+  color: var(--accent-dark);
+}

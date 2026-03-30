@@ -7,8 +7,6 @@ type ContactPayload = {
   message?: string;
 };
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req: Request) {
   try {
     const body = (await req.json()) as ContactPayload;
@@ -33,10 +31,11 @@ export async function POST(req: Request) {
       );
     }
 
+    const apiKey = process.env.RESEND_API_KEY;
     const toEmail = process.env.CONTACT_TO_EMAIL;
     const fromEmail = process.env.CONTACT_FROM_EMAIL;
 
-    if (!process.env.RESEND_API_KEY || !toEmail || !fromEmail) {
+    if (!apiKey || !toEmail || !fromEmail) {
       return NextResponse.json(
         {
           error:
@@ -45,6 +44,8 @@ export async function POST(req: Request) {
         { status: 500 }
       );
     }
+
+    const resend = new Resend(apiKey);
 
     const churchSend = await resend.emails.send({
       from: fromEmail,

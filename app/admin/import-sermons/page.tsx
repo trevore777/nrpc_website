@@ -18,7 +18,23 @@ export default function ImportSermonsPage() {
         throw new Error(data?.error || "Import failed");
       }
 
-      setResult(JSON.stringify(data, null, 2));
+      const formatted = `export type Sermon = {
+  title: string;
+  speaker: string;
+  date: string;
+  scripture?: string;
+  hook?: string;
+  summary: string;
+  keyPoints?: string[];
+  youtube?: string;
+  link?: string;
+  thumbnail?: string;
+};
+
+export const sermons: Sermon[] = ${JSON.stringify(data.sermons, null, 2)};
+`;
+
+      setResult(formatted);
     } catch (err) {
       const message = err instanceof Error ? err.message : "Import failed";
       setResult(message);
@@ -30,18 +46,21 @@ export default function ImportSermonsPage() {
   return (
     <div className="container" style={{ padding: "40px 0" }}>
       <span className="eyebrow">Admin</span>
-      <h1>Import sermons from YouTube</h1>
+      <h1>Import and optimise sermons</h1>
       <p className="lead">
-        This page calls the import endpoint and shows the returned result.
+        This imports the latest YouTube videos and generates hook lines,
+        preview summaries, and key points for the sermons page.
       </p>
 
-      <button
-        className="button primary"
-        onClick={handleImport}
-        disabled={loading}
-      >
-        {loading ? "Importing..." : "Import latest sermons"}
-      </button>
+      <div className="button-row">
+        <button
+          className="button primary"
+          onClick={handleImport}
+          disabled={loading}
+        >
+          {loading ? "Importing..." : "Import latest sermons"}
+        </button>
+      </div>
 
       {result ? (
         <pre
